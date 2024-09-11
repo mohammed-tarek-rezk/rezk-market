@@ -26,7 +26,7 @@ function ProductCard({product}) {
             <span className='z-[2] md:text-lg card-icon relative '><FiShoppingCart /></span>
             <span className='z-[2]  md:text-lg card-icon relative '><FaRegHeart /></span>
         </div>
-        <div className='h-[250px] md:h-[250px] center '>
+        <div className='h-[200px] md:h-[250px] center '>
             <img src={product.images[0]} className="h-full object-cover"/>
         </div>
         </div>

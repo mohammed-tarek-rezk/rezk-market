@@ -12,7 +12,7 @@ function SlideElem({category, image}) {
         setLoading(false)
    }
   return (
-    <Container className='flex flex-col-reverse md:flex-row gap-2 md:px-6  h-[400px] md:h-[500px]'>
+    <Container className='flex flex-col-reverse md:flex-row gap-2 md:px-6  h-[500px] md:h-[500px]'>
         <div className='md:basis-1/2 flex flex-col gap-4 justify-center  flex-grow md:flex-grow-0 md:p-5'>
             <p className=' text-pink capitalize font-Lato gap-2'>Best {category} for you......</p>
             <h3 className='font-bold text-2xl md:text-4xl  capitalize '>New {category} collection <br/> Trends in {new Date().getFullYear()}</h3>
