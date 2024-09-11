@@ -8,6 +8,41 @@
     body{
         @apply font-Josefin
     }
+    .slider-image::after{
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        left: 5%;
+        top: 5%;
+        border-radius: 100%;
+        background-color: #ECD2FA;
+        z-index: 1;
+        opacity: 35%;
+    }
+    .slider-image::before{
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        left: 10%;
+        top: 10%;
+        border-radius: 100%;
+        background-color: #ECD2FA;
+        z-index: 1;
+        opacity: 35%;
+    }
+    .card-icon::after{
+        content: "";
+        background-color: rgba(91, 91, 225, 0.147);
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        z-index: 1;
+        border-radius: 50%;
+    }
 }
 @layer components{
     .btn{
@@ -15,5 +50,17 @@
     }
     .center{
         @apply flex justify-center items-center;
+    }
+    .pagination-container{
+        @apply flex gap-2 justify-center flex-nowrap absolute bottom-3 z-10 w-full
+    }
+    .pag-unact{
+        @apply w-2 h-2 border border-pink inline-block rotate-45
+    }
+    .f-bu{
+        @apply w-6 h-1 border bg-pink bg-opacity-20 rounded-xl cursor-pointer
+    }
+    .pag-act, .f-bu-act{
+        @apply bg-pink scale-105 mx-1 bg-opacity-100
     }
 }

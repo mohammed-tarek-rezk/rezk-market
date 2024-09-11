@@ -8,23 +8,28 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 function Footer() {
-
+  let animation = useRef()
   useGSAP(()=>{
     gsap.registerPlugin(ScrollTrigger)
-      gsap.from(".right", {
+      gsap.from(".footer-animation", {
           y:50, 
           opacity:0,
           duration:1,
-          stagger: 0.5,
+          stagger: 0,
           scrollTrigger:{
-            trigger: "footer"
+            trigger: animation.current,
+            start: "bottom bottom",
+            invalidateOnRefresh: true
           }
       })
   },[])
+  
   return (
+    <>
+    <div className='footer-disp py-1' ref={animation}></div>
     <footer className=' overflow-hidden' >
       <div className='bg-lightBlue' >
-        <Container className={`grid md:grid-cols-5   py-12 gap-6 right`}  >
+        <Container className={`grid md:grid-cols-5   py-12 gap-6 footer-animation`}  >
           <div className='col-span-2'>
             <Logo className=' justify-start' />
               <form className=' flex w-full my-3'>
@@ -44,6 +49,7 @@ function Footer() {
           </Container>
         </div>
     </footer>
+    </>
   )
 }
 
