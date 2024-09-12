@@ -14,6 +14,7 @@ export {default as BoxLoading } from "./loadings/BoxLoading"
 export {default as HomePageSlider } from "./HomePageSlider"
 export {default as SectionHeader } from "./SectionHeader"
 export {default as FeaturedProducts } from "./FeaturedProducts"
+export {default as ScrollToTop } from "./ScrollToTop"
 
 
 

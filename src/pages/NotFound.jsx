@@ -1,7 +1,8 @@
 import React, {  useRef, useState } from 'react'
-import {  PageTitle, Container } from '../components'
+import {  PageTitle, Container, ScrollToTop } from '../components'
 import { IMAGES_LINKS } from '../services/imagesServices'
 import BoxLoading from '../components/loadings/BoxLoading'
+
 
 
 
@@ -16,6 +17,7 @@ function NotFound() {
   }
   return(
     <div>
+      <ScrollToTop />
       <PageTitle title={"404 Not Found"}/>
       <Container className={"center"}>
           {loading && <BoxLoading className='h-[400px] md:[600px]' /> }

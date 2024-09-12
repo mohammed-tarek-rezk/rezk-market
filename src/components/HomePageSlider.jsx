@@ -9,7 +9,6 @@ import BoxLoading from './loadings/BoxLoading';
 
 function HomePageSlider() {
     let {data , isLoading , isSuccess} = useGetAllProductsQuery({limit: 4 , sortBy:"title" })
-    console.log(data)
     let [sw , setSw] = useState();
     let [active , setActive] = useState(1);
   return !isLoading && isSuccess ? (
@@ -36,8 +35,7 @@ function HomePageSlider() {
         delay: 2500,
         disableOnInteraction: false,
       }}
-      onSwiper={(swiper) =>{console.log(swiper) ;setSw(swiper)}}
-      onSlideChange={(s) => console.log(s.activeIndex)}
+      onSwiper={(swiper) =>{setSw(swiper)}}
     >
                 {data?.products?.map((el)=>(
                     <SwiperSlide key={el} >

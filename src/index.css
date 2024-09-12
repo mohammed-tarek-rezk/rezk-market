@@ -63,4 +63,8 @@
     .pag-act, .f-bu-act{
         @apply bg-pink scale-105 mx-1 bg-opacity-100
     }
+    .icon-tem{
+        @apply center h-8 w-8 rounded-full  cursor-pointer;
+        background-color: rgba(91, 91, 225, 0.147);
+    }
 }

@@ -1,21 +1,23 @@
 import React from 'react'
-import {Container, SectionHeader} from './index'
+import {BoxLoading, Container, SectionHeader} from './index'
 import { Swiper, SwiperSlide  } from 'swiper/react'
 import {Autoplay , FreeMode,Grid,Pagination , A11y} from "swiper/modules"
 import ProductCard from './ProductCard'
 import { useGetAllProductsQuery } from '../store/Apis/productsApi'
 function FeaturedProducts() {
   let {data , isLoading} = useGetAllProductsQuery({limit: 8})
-  console.log(data)
   return (
     <div>
         <SectionHeader title={"featured products"} />
         <Container className={"my-5 "}>
+          {isLoading && <div className='grid grid-cols-4 gap-2'>{new Array(4).fill(1).map((el , i)=> <BoxLoading className='w-full h-[400px] bg-SkyBlue opacity-40' key={i}/> ) }</div>  }
             <Swiper
             className='py-5 px-2'
               autoplay={{
-                delay: 2500,
+                delay: 3000,
                 disableOnInteraction: false,
+                pauseOnMouseEnter: true
+                
               }}
               pagination={{
                 clickable: true,

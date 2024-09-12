@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import NotFound from '../pages/NotFound'
+import ScrollToTop from './ScrollToTop'
 
 export const MAIN_LINKS = {
   home: "/",
@@ -23,10 +24,12 @@ export const MAIN_LINKS = {
 
 function MainRoutes() {
   return (
+    <>
     <Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='*' element={<NotFound />}/>
     </Routes>
+    </>
   )
 }
 
