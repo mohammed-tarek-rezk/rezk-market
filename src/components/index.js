@@ -15,6 +15,8 @@ export {default as HomePageSlider } from "./HomePageSlider"
 export {default as SectionHeader } from "./SectionHeader"
 export {default as FeaturedProducts } from "./FeaturedProducts"
 export {default as ScrollToTop } from "./ScrollToTop"
+export {default as ProductCard } from "./ProductCard"
+export {default as PayTableRow } from "./PayTableRow"
 
 
 

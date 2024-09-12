@@ -17,7 +17,8 @@ export default {
         "PantonePurple": "#F5E1FC",
         "text": "#151875",
         "lightBlue": "#F6F5FF",
-        "subtitle":"#8A8FB9"
+        "subtitle":"#8A8FB9",
+        "skygreen":"#19D16F"
 
       }
     },

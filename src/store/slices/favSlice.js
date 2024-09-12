@@ -7,11 +7,11 @@ let favSlice = createSlice({
     reducers:{
         //add to fav
         addToFav:(state, action)=>{
-            return [...state ,action.payload]
+            return [...state , action.payload]
         },
         //remove from fav
         removeFromFev:(state, action)=>{
-            let output = state.filter((el)=> el !== action.payload)
+            let output = state.filter((el)=> el.id !== action.payload )
             return output
         },
 

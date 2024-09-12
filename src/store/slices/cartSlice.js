@@ -32,7 +32,7 @@ let cartSlice = createSlice({
             return output
         },
         removeFromCart:(state, action)=>{
-            let output = state.filter((el)=> el !== action.payload)
+            let output = state.filter((el)=> el.id !== action.payload)
             return output
         },
 

@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage for 
 const persistConfig = {
   key: 'cart',
   storage,
+  blacklist: [`${[productsApi.reducerPath]}`]
 }
 const reducer = combineReducers({
   [productsApi.reducerPath]: productsApi.reducer,
@@ -15,7 +16,7 @@ const reducer = combineReducers({
   cart: cartSlice
 })
 
-const persistReducers =persistReducer(persistConfig , reducer)
+const persistReducers = persistReducer(persistConfig , reducer)
 export const store = configureStore({
   reducer: persistReducers ,
   middleware: (getDefaultMiddleware) =>

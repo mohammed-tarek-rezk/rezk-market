@@ -1,8 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-import NotFound from '../pages/NotFound'
-import ScrollToTop from './ScrollToTop'
+import {HomePage , NotFound , WishList , CartPage} from "../pages"
+
 
 export const MAIN_LINKS = {
   home: "/",
@@ -26,7 +25,9 @@ function MainRoutes() {
   return (
     <>
     <Routes>
-        <Route path='/' element={<HomePage />}/>
+        <Route path={MAIN_LINKS.home} element={<HomePage />}/>
+        <Route path={MAIN_LINKS.wishlist} element={<WishList />}/>
+        <Route path={MAIN_LINKS.cart} element={<CartPage />}/>
         <Route path='*' element={<NotFound />}/>
     </Routes>
     </>
