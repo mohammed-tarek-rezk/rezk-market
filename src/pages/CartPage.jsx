@@ -3,6 +3,7 @@ import { Container, PageTitle , PayTableRow} from '../components'
 import { useDispatch, useSelector } from 'react-redux'
 import { decreaseCount, increaseCount, removeFromCart } from '../store/slices/cartSlice'
 import { MdAutoDelete } from 'react-icons/md'
+import { Helmet } from 'react-helmet-async'
 
 
 function CartPage() {
@@ -10,6 +11,10 @@ function CartPage() {
     let dispatch = useDispatch()
   return (
     <div>
+        <Helmet>
+            <title>Cart || Rezk Market</title>
+            <meta role='description' content='IT is the cart page for rezk market App' />
+        </Helmet>
         <PageTitle title={"Cart"} />
         <Container className='flex flex-col gap-6 md:flex-row my-10' >
             <div className='flex-grow'>
