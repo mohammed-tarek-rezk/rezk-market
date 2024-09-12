@@ -23,11 +23,11 @@ function ProductCard({ product, swiper }) {
   useEffect(() => {
     // document.addEventListener("mouseleave")
     card.current.addEventListener("mouseenter", (e) => {
-      e.target.classList.add("scale-105");
+      e.target.classList.add("md:scale-105");
       setShowDetails(true);
     });
     card.current.addEventListener("mouseleave", (e) => {
-      e.target.classList.remove("scale-105");
+      e.target.classList.remove("md:scale-105");
       setShowDetails(false);
     });
   }, []);
@@ -36,8 +36,10 @@ function ProductCard({ product, swiper }) {
       className="  bg-white shadow-md  rounded-md overflow-hidden relative transition-all"
       ref={card}
     >
+
+
       <div className="bg-SkyBlue bg-opacity-30">
-        <div className="flex gap-10 center justify-start p-5 ">
+        <div className="flex gap-10 center justify-start p-5 h-[60px]">
           {cart?.find((el) => el.id === product.id) === undefined ? (
             <span
               className="z-[2] md:text-lg card-icon relative md:w-5 md:h-5 w-4 h-4 center"
@@ -46,7 +48,7 @@ function ProductCard({ product, swiper }) {
               <FiShoppingCart />
             </span>
           ) : (
-            <p className="flex gap-2 items-center bg-white p-2 shadow-sm rounded-full ">
+            <p className="flex gap-2 items-center">
               <span
                 className="icon-tem"
                 onClick={() => dispatch(increaseCount(product.id))}
@@ -81,12 +83,17 @@ function ProductCard({ product, swiper }) {
           )}
         </div>
       </div>
-         <Link to={`/products/${product.id}`} >
+
+
+
+         <Link to={`/products/${product.id}`} className="" >
+
+
         <div className="h-[200px] md:h-[250px] center bg-SkyBlue bg-opacity-30 ">
           <img src={product.images[0]} className="h-full object-cover" />
         </div>
 
-      <div className="text-center py-5">
+      <div className="text-center py-3">
         <h4 className="text-pink truncate font-bold  text-lg">
           {product.title}
         </h4>
@@ -98,6 +105,8 @@ function ProductCard({ product, swiper }) {
           <span className="text-pink line-through">${product.price}</span>
         </p>
       </div>
+
+
         </Link>
 
       {showDetails && (
